@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { PasswordGate } from "@/components/PasswordGate";
+import { PWAInstallBanner } from "@/components/PWAInstallBanner";
 import { siteConfig } from "@/lib/config/site-config";
 
 
@@ -46,6 +47,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
+          <PWAInstallBanner />
           <PasswordGate hasEnvPassword={!!process.env.ACCESS_PASSWORD}>
             {children}
           </PasswordGate>
